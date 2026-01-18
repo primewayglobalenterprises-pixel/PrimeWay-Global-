@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prime Way Global Enterprises</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#f4f6f9;
+}
+header{
+  background:#0b5ed7;
+  color:white;
+  padding:15px;
+  text-align:center;
+}
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+.card{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+button{
+  background:#0b5ed7;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:5px;
+  cursor:pointer;
+}
+input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+}
+.dashboard{
+  display:none;
+}
+.stat-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+.stat{
+  background:#e9f0ff;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+}
+footer{
+  text-align:center;
+  padding:10px;
+  font-size:13px;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Prime Way Global Enterprises</h2>
+<p>Your Growth, Our Mission</p>
+</header>
+
+<div class="container">
+
+<!-- LOGIN -->
+<div class="card" id="loginBox">
+<h3>Member Login</h3>
+<input type="email" placeholder="Email" id="email">
+<input type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<p style="font-size:13px;color:green;margin-top:10px;">
+✔ Email verification required (Demo)
+</p>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+
+<div class="card">
+<h3>Welcome, <span id="userEmail"></span></h3>
+<p>Status: <b style="color:green;">Verified Member</b></p>
+</div>
+
+<div class="stat-box">
+<div class="stat">
+<h4>Total Earning</h4>
+<p>₹2,450</p>
+</div>
+<div class="stat">
+<h4>Today Earning</h4>
+<p>₹198</p>
+</div>
+<div class="stat">
+<h4>Active Referrals</h4>
+<p>12</p>
+</div>
+<div class="stat">
+<h4>Member ID</h4>
+<p>PWG1025</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Earning Report</h3>
+<table width="100%" border="1" cellspacing="0" cellpadding="8">
+<tr>
+<th>Date</th>
+<th>Description</th>
+<th>Amount</th>
+</tr>
+<tr>
+<td>17-01-2026</td>
+<td>Referral Income</td>
+<td>₹198</td>
+</tr>
+<tr>
+<td>16-01-2026</td>
+<td>Referral Income</td>
+<td>₹250</td>
+</tr>
+</table>
+<p style="font-size:12px;margin-top:8px;">
+Last Updated: 17 January 2026
+</p>
+</div>
+
+<div class="card">
+<h3>Your Referral Link</h3>
+<input value="https://primewayglobal.in/?ref=PWG1025" readonly>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Prime Way Global Enterprises | Transparency • Growth • Trust
+</footer>
+
+<script>
+function login(){
+  var email = document.getElementById("email").value;
+  if(email === ""){
+    alert("Please enter email");
+  }else{
+    document.getElementById("loginBox").style.display="none";
+    document.getElementById("dashboard").style.display="block";
+    document.getElementById("userEmail").innerText=email;
+  }
+}
+</script>
+
+</body>
+</html>
